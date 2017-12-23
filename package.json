@@ -6,11 +6,23 @@
   "repository": "https://github.com/sFulgham/js-starter-kit.git",
   "author": "Steven Fulgham",
   "license": "MIT",
+  "scripts": {
+    "package-security-check": "nsp check",
+    "start-build-server": "pm2 start build/server.js --watch --interpreter babel-node",
+    "dev": "npm-run-all --parallel package-security-check start-build-server"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react",
+      "stage-2"
+    ]
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.1",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-latest": "^6.24.1",
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
@@ -20,7 +32,6 @@
     "eslint": "^4.13.1",
     "eslint-plugin-import": "^2.8.0",
     "eslint-watch": "^3.1.3",
-    "express": "^4.16.2",
     "html-webpack-plugin": "^2.30.1",
     "jsdom": "^11.5.1",
     "localtunnel": "^1.8.3",
@@ -35,5 +46,14 @@
     "webpack-dev-middleware": "^2.0.3",
     "webpack-hot-middleware": "^2.21.0",
     "webpack-md5-hash": "^0.0.6"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "pm2": "^2.9.1"
   }
 }

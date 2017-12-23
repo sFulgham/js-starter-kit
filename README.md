@@ -1,11 +1,12 @@
 # JavaScript Starter Kit
-A javascript dev environment
+### A javascript dev environment
 
 1. Install Editor Config plugin for vsCode
 2. Install NodeJs
 3. Install Yarn Package Manager
 4. Install Babel CLI
-5. Install the Kit Dependencies
+5. Install Node Security Project
+5. Install the Starter Kit Dependencies
 
 
 ## Editor Config
@@ -28,7 +29,18 @@ yarn add babel-cli -g
 ```
 This will install Babel CLI globally.
 
-## Kit Dependencies
+## Node Security Project
+To install the [Node Security Project](https://nodesecurity.io) open a terminal window. In the terminal window type:
+```
+yarn add nsp -g
+```
+This will install the Node Security Project globally. To run a security check on the Node Packages type
+```
+yarn package-security-check
+```
+in the terminal window after you install the Starter Kit Dependencies in the next step.
+
+## Starter Kit Dependencies
 To install the dependencies for this project open a terminal window. In the terminal window type:
 ```
 yarn install
