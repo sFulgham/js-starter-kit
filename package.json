@@ -8,14 +8,17 @@
   "license": "MIT",
   "scripts": {
     "package-security-check": "nsp check",
+    "start-build-message": "node build/messages --start",
+    "stop-build-message": "node build/messages --stop",
     "start-build-server": "pm2 start build/server.js --watch --interpreter babel-node",
-    "dev": "npm-run-all --parallel package-security-check start-build-server"
+    "stop-build-server": "pm2 stop build/server.js",
+    "dev-stop": "npm-run-all --parallel stop-build-server stop-build-message",
+    "dev": "npm-run-all --parallel package-security-check start-build-server start-build-message"
   },
   "babel": {
     "presets": [
       "env",
-      "react",
-      "stage-2"
+      "latest"
     ]
   },
   "devDependencies": {
@@ -54,6 +57,10 @@
     "babel-preset-stage-2": "^6.24.1",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
-    "pm2": "^2.9.1"
+    "node-sass": "^4.7.2",
+    "pm2": "^2.9.1",
+    "sass-loader": "^6.0.6",
+    "webpack-css-loaders": "^1.0.0",
+    "webpack-sass-loaders": "^1.0.0"
   }
 }
