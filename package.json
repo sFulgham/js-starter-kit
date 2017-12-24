@@ -7,13 +7,16 @@
   "author": "Steven Fulgham",
   "license": "MIT",
   "scripts": {
+    "lint": "esw webpack.config.* src build --color",
+    "lint:watch": "yarn lint --watch",
+    "unit-test": "mocha --reporter progress build/testSetup.js \"src/**/*.test.js\"",
     "package-security-check": "nsp check",
     "start-build-message": "node build/messages --start",
     "stop-build-message": "node build/messages --stop",
     "start-build-server": "pm2 start build/server.js --watch --interpreter babel-node",
     "stop-build-server": "pm2 stop build/server.js",
     "dev-stop": "npm-run-all --parallel stop-build-server stop-build-message",
-    "dev": "npm-run-all --parallel package-security-check start-build-server start-build-message"
+    "dev": "npm-run-all --parallel package-security-check start-build-server start-build-message lint:watch"
   },
   "babel": {
     "presets": [
@@ -33,9 +36,12 @@
     "cheerio": "^1.0.0-rc.2",
     "cross-env": "^5.1.3",
     "eslint": "^4.13.1",
+    "eslint-plugin-babel": "^4.1.2",
     "eslint-plugin-import": "^2.8.0",
     "eslint-watch": "^3.1.3",
     "html-webpack-plugin": "^2.30.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^22.0.4",
     "jsdom": "^11.5.1",
     "localtunnel": "^1.8.3",
     "mocha": "^4.0.1",

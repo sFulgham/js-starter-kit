@@ -1,7 +1,7 @@
 var chalk = require('chalk');
 var config = require('./config');
 
-
+/* eslint-disable no-console */
 const isStart = process.argv.slice(2) == "start" ? true : false;
 
 isStart ?

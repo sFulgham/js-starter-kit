@@ -7,6 +7,7 @@ import webpack from 'webpack';
 import wpConfig from '../webpack.config.dev';
 import wpDevMw from 'webpack-dev-middleware';
 
+/* eslint-disable no-console */
 const app = express();
 const wpCompiler = webpack(wpConfig);
 
